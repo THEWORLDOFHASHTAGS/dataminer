@@ -162,8 +162,6 @@ decorate_with_id(B) ->
 my_print(T) ->
   case T of
     {parsed_tweet, L, B, _} ->
-      %X = jiffy:decode(B),
-      %io:format("~p~n", [X]),
       case extract(<<"warning">>, L) of
         {found, _} -> io:format("~s~n", [B]);
         not_found -> ok
